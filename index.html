@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="example-app">
+<head>
+  <title>AngularJS Example</title>
+</head>
+<body>
+
+  <div ui-view></div>
+
+
+  <script type="text/javascript" src="vendor/angular/angular.js"></script>
+
+  <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <script type="text/javascript" src="src/app/app.js"></script>
+
+  <script type="text/javascript" src="src/app/login/login.js"></script>
+
+  <script type="text/javascript" src="templates-app.js"></script>
+
+  <script>
+  module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-index-html-template');
+
+    var taskConfig = {
+
+
+      index: {
+        build: {
+          dir: '<%= build_dir %>',
+          src: [
+          '<%= vendor_files.js %>',
+          '<%= build_dir %>/src/**/*.js',
+          '<%= html2js.app.dest %>'
+          ]
+        }
+      }
+
+
+    };
+  };
+  </script>
+
+
+</body>
+</html>
